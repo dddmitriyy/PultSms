@@ -1,9 +1,13 @@
 package com.example.pultsms
 
 import android.Manifest
+import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.graphics.ColorSpace.Rgb
+import android.net.Uri
 import android.os.Bundle
 import android.telephony.SmsManager
 import android.util.AttributeSet
@@ -22,11 +26,13 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.ui.R
 import com.example.pultsms.databinding.ActivityMainBinding
+import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.sql.Timestamp
@@ -58,6 +64,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
     fun sendSms(number: String, sms: String) {
 
         try {
@@ -83,6 +90,16 @@ class MainActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
+
+    fun ShowInfoMessage(view: View)
+    {
+        val s= view.tag
+        val builder = AlertDialog.Builder(this)
+        builder//setTitle(" ")
+            .setMessage(s.toString())
+        val dialog = builder.create()
+        dialog.show()
+    }
     fun ComanndSend(view: View) {
 
 
@@ -97,7 +114,14 @@ class MainActivity : AppCompatActivity() {
     fun CreateButtonList(view: View){
         CreateButtonList()
     }
-
+    fun call(s: String) {
+        val call = Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + s))
+        startActivity(call)
+    }
+    fun callSend(view: View)
+    {
+        call(binding.editTextSendMessageNumbler.text.toString())
+    }
     fun Checkpermission() {
         if (ContextCompat.checkSelfPermission(
                 this,
@@ -229,23 +253,24 @@ class MainActivity : AppCompatActivity() {
             t = "mau:" + t
 
         Log.w("activity222",binding.toString())
-        binding?.editTextSendMessageCommand?.setText(t)
+        binding.editTextSendMessageCommand?.setText(t)
 
-        binding?.textViewDescription?.setText(name)
+        binding.textViewDescription?.setText(name)
 
 
     }
     data class ff(val ll: LinearLayout, val title: String)
 
     val list_l = mutableListOf<ff>()
-
+    var colorrrr = 255
     private fun createButtonDynamically(tag: String = "", namee: String = "", title: String = "") {
 
 Log.w("createButtonDynamically",tag+namee+title)
         list_l.find { it.title == title } ?: run {
             var lll = LinearLayout(this@MainActivity)
             lll.orientation = 1
-
+                    //   lll.setBackgroundColor(    Color.rgb(0, 0, colorrrr ))
+            colorrrr -= 15
             val text = TextView(this@MainActivity)
             text.setText(title)
             lll.addView(text)
@@ -259,13 +284,16 @@ Log.w("createButtonDynamically",tag+namee+title)
 
         // creating the button
         var name = namee
-        val dynamicButton = Button(this@MainActivity)
+        val dynamicButton = MaterialButton(this@MainActivity)
         if (name == "")
             name = tag
 
         dynamicButton.text = name
         dynamicButton.tag = tag
-
+        dynamicButton.cornerRadius = 6
+        //    dynamicButton.app:cornerRadius="2dp"
+        val but_color=Color.rgb(91,157,200)
+        dynamicButton.setBackgroundColor(but_color)
         dynamicButton.setOnClickListener() {
             addComanndSend(tag, name)
             ll?.let { it1 -> addComanndText(it1,"bt"+tag,"test ok" ) }//
@@ -296,14 +324,14 @@ Log.w("createButtonDynamically",tag+namee+title)
             var i = 0
 
             for (el_tag in tag.split("|")) {
-                val but = Button(this)
+                val but = MaterialButton(this)
                 if (nname.size > i)
                     name = nname[i]
                 else
                     name = el_tag
                 but.text = name
                 but.tag = el_tag
-
+                but.setBackgroundColor(but_color)
                 but.setOnClickListener { addComanndSend(but.tag.toString(), but.text.toString())
                     ll?.let { it1 -> addComanndText(it1,"bt"+but.tag.toString(),"test ok" ) }
                 }

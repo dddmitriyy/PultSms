@@ -5,5 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.PultSms" parent="Base.Theme.PultSms" />
+    <style name="Theme.PultSms" parent="Base.Theme.PultSms"  >
+
+</style>
+    <style name="Theme.PultSms2" parent="Base.Theme.PultSms" />
 </resources>
