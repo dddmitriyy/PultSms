@@ -1,40 +1,29 @@
 package com.example.pultsms
 
 import android.Manifest
-import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
-import android.graphics.ColorSpace.Rgb
 import android.net.Uri
 import android.os.Bundle
 import android.telephony.SmsManager
 import android.util.AttributeSet
 import android.util.Log
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
-import android.widget.Button
+import android.widget.ArrayAdapter
 import android.widget.LinearLayout
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.ui.R
+import androidx.core.view.WindowCompat
+import androidx.navigation.ui.AppBarConfiguration
 import com.example.pultsms.databinding.ActivityMainBinding
 import com.google.android.material.button.MaterialButton
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.sql.Timestamp
 import java.text.SimpleDateFormat
 
@@ -52,13 +41,41 @@ class MainActivity : AppCompatActivity() {
 
         //setSupportActionBar(binding.toolbar)
         Checkpermission()
-        CreateButtonList()
-
+     //   CreateButtonList()
+        spinnerInitAdd()
     }
 
     override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
         return super.onCreateView(name, context, attrs)
         Log.w("onCreateView","e")
+
+
+    }
+
+// функция для заполнения spinner
+    fun spinnerInit( spin :Spinner,list :List<String>)
+    {
+
+        val adapter = ArrayAdapter (this, android.R.layout.simple_spinner_item, list)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        spin.adapter = adapter
+       // android:spinnerMode="dialog
+
+        spin.getSelectedItem().toString()
+    }
+    fun spinnerInitAdd() {
+        val list = listOf<String>(
+            "Apple",
+            "Banana",
+            "Cherry",
+            "Durian")
+
+        spinnerInit(binding.spinner1,list)
+        spinnerInit(binding.spinner2,list)
+        spinnerInit(binding.spinner3,list)
+        spinnerInit(binding.spinner4,list)
+        spinnerInit(binding.spinner5,list)
 
     }
 

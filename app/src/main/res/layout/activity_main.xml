@@ -16,8 +16,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:background="@drawable/gradient"
         android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/textView2"
@@ -97,11 +98,166 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+
                 android:scaleType="fitEnd" >
+
+                <LinearLayout
+                    android:id="@+id/main_layot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="1dp"
+                    android:background="@drawable/custom_button"
+                    android:orientation="horizontal"
+                    android:padding="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@drawable/phone_31105" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Телефон"
+                                android:textAlignment="center"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/big_label_fontSize"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Номер телефона"
+                                android:textAlignment="center"
+                                android:textColor="@color/small_label_color"
+                                android:textSize="@dimen/small_label_fontSize"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/fab2"
+                            android:layout_marginRight="12dp"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/editTextPhone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:background="#FFFFFF"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:inputType="phone"
+                                android:paddingLeft="6dp"
+                                android:singleLine="true"
+                                android:text="+7(909)123-45-66"
+                                android:textSize="@dimen/input_font_size" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:id="@+id/main_layot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="1dp"
+                    android:background="@drawable/custom_button"
+                    android:orientation="horizontal"
+                    android:padding="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@drawable/phone_31105" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ID"
+                                android:textAlignment="center"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/big_label_fontSize"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Индетификатор"
+                                android:textAlignment="center"
+                                android:textColor="@color/small_label_color"
+                                android:textSize="@dimen/small_label_fontSize"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/fab2"
+                            android:layout_marginRight="12dp"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/editTextPhone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:background="#FFFFFF"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:inputType="phone"
+                                android:paddingLeft="6dp"
+                                android:singleLine="true"
+                                android:text="+7(909)123-45-66"
+                                android:textSize="@dimen/input_font_size" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_marginHorizontal="1dp"
+                    android:background="@drawable/custom_button"
+                    android:orientation="vertical"
+                    android:padding="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -118,9 +274,10 @@
                             android:textSize="16sp" />
 
                         <Spinner
-                            android:id="@+id/spinner11"
+                            android:id="@+id/spinner1"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:spinnerMode="dialog" />
 
                         <ImageView
 
@@ -176,7 +333,7 @@
                             android:textSize="16sp" />
 
                         <Spinner
-                            android:id="@+id/spinner4"
+                            android:id="@+id/spinner3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
@@ -205,7 +362,7 @@
                             android:textSize="16sp" />
 
                         <Spinner
-                            android:id="@+id/spinner3"
+                            android:id="@+id/spinner4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
@@ -243,10 +400,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:onClick="ShowInfoMessage"
-                            app:srcCompat="@android:drawable/ic_dialog_info"
-                            android:tag="5" />
+                            android:tag="5"
+                            app:srcCompat="@android:drawable/ic_dialog_info" />
 
                     </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textView4"
@@ -274,7 +438,8 @@
                             android:id="@+id/EditText1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2" />
+                            android:layout_weight="2"
+                            android:singleLine="true" />
 
                         <ImageView
 
@@ -300,10 +465,11 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/EditText1"
+                            android:id="@+id/EditText2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2" />
+                            android:layout_weight="2"
+                            android:singleLine="true" />
 
                         <ImageView
 
@@ -329,10 +495,11 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/EditText1"
+                            android:id="@+id/EditText3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2" />
+                            android:layout_weight="2"
+                            android:singleLine="true" />
 
                         <ImageView
 
@@ -358,10 +525,11 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/EditText1"
+                            android:id="@+id/EditText4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2" />
+                            android:layout_weight="2"
+                            android:singleLine="true" />
 
                         <ImageView
 
