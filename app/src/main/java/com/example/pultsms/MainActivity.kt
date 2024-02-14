@@ -105,6 +105,13 @@ class MainActivity : AppCompatActivity() {
 
         spinnerInit(binding.spinnerPeriodOP,list)
         spinnerInit(binding.spinnerPeriodSend,list)
+        spinnerInit(binding.spinnerWorkMode,listOf<String>("Контроль движения","Радиомаяк"))
+
+        var array   = Array<String>(255) { i -> ( i).toString()+" мин." }.toList()
+        spinnerInit(binding.spinnerTimeDD,array)
+        array   = Array<String>(127) { i -> ( i).toString()+"" }.toList()
+        spinnerInit(binding.spinnerSensDD,array)
+
         val list2 = listOf<String>(
             "30 мин.",
             "1 час.",
@@ -116,15 +123,7 @@ class MainActivity : AppCompatActivity() {
             "24 час.",
         )
 
-        spinnerInit(binding.spinnerPeriodSend,list2)
-
-
-        var array   = Array<String>(255) { i -> ( i).toString()+" мин." }.toList()
-        spinnerInit(binding.spinnerWork,array)
-        array   = Array<String>(127) { i -> ( i).toString()+"" }.toList()
-        spinnerInit(binding.spinnerWork,array)
-
-
+        spinnerInit(binding.spinnerPeriodOPSend,list2)
 
     }
 

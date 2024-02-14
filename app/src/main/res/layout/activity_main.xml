@@ -459,14 +459,15 @@
                             android:textSize="@dimen/big_label_fontSize"
                             android:textStyle="bold"></TextView>
 
-                        <Spinner
+                        <Switch
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
-                            android:ellipsize="start"
-                            android:scrollbarSize="22dp"
-                            android:trackTint="#FFFFFF" />
+
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:trackTint="#28DC30" />
+
 
                     </LinearLayout>
 
@@ -536,7 +537,7 @@
                             android:textStyle="bold"></TextView>
 
                         <Spinner
-                            android:id="@+id/spinnerWork"
+                            android:id="@+id/spinnerWorkMode"
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
