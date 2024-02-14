@@ -17,51 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/gradient"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Аналог - СПО"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Абонентское устройство"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/editTextSendMessageNumbler"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="phone"
-            android:text="+79031234567"
-            android:textSize="34sp" />
-
-        <EditText
-            android:id="@+id/editTextSendMessageCommand"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="CommandText"
-            android:textSize="34sp" />
-
-        <TextView
-            android:id="@+id/textViewDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text=" "
-            android:textSize="20sp" />
+        android:orientation="vertical"
+        android:padding="10dp">
 
 
         <Button
@@ -71,7 +28,8 @@
 
             android:layout_gravity="center"
             android:onClick="ComanndSend"
-            android:text="Отправить команду" />
+            android:text="Отправить команду"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/buttoncallSend"
@@ -80,29 +38,40 @@
 
             android:layout_gravity="center"
             android:onClick="callSend"
-            android:text="Aудиоконтроль" />
+            android:text="Aудиоконтроль"
+            android:visibility="gone" />
 
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbarThumbHorizontal="@drawable/candy3"
-            android:scrollbarThumbVertical="@drawable/candy3">
 
 
+            android:scrollbars="horizontal">
 
 
             <LinearLayout
                 android:id="@+id/ll_send_cmd"
-                android:background="@drawable/gradient"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:orientation="vertical"
 
-                android:scaleType="fitEnd" >
+                android:scaleType="fitEnd">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:onClick="editInit"
+                    android:text="Настройки устройства"
+                    android:textColor="#050505"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
-                    android:id="@+id/main_layot"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="1dp"
@@ -153,10 +122,9 @@
 
                             <EditText
                                 android:id="@+id/editTextPhone"
-                                android:layout_width="wrap_content"
+                                android:layout_width="@dimen/edit_width"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
                                 android:background="#FFFFFF"
                                 android:ems="10"
                                 android:gravity="center_vertical"
@@ -173,16 +141,15 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="?android:attr/listDivider" />
+                    android:layout_height="25dp" />
 
                 <LinearLayout
-                    android:id="@+id/main_layot"
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="1dp"
                     android:background="@drawable/custom_button"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="4dp">
 
                     <LinearLayout
@@ -190,10 +157,11 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageView2"
+
+                            style="@style/MyImage"
                             android:layout_width="@dimen/fab"
                             android:layout_height="@dimen/fab"
-                            app:srcCompat="@drawable/phone_31105" />
+                            app:srcCompat="@drawable/contact_icon_icon_icons_com_76434" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -227,23 +195,224 @@
                             android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/editTextPhone"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/editTextId"
+                                android:layout_width="@dimen/edit_width"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
+
                                 android:background="#FFFFFF"
                                 android:ems="10"
                                 android:gravity="center_vertical"
-                                android:inputType="phone"
+                                android:inputType="text"
                                 android:paddingLeft="6dp"
                                 android:singleLine="true"
-                                android:text="+7(909)123-45-66"
+                                android:text="1234567890"
+                                android:textSize="@dimen/input_font_size" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            style="@style/MyImage"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@drawable/id_icon_148506" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Код"
+                                android:textAlignment="center"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/big_label_fontSize"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="В системе факел"
+                                android:textAlignment="center"
+                                android:textColor="@color/small_label_color"
+                                android:textSize="@dimen/small_label_fontSize"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/fab2"
+                            android:layout_marginRight="12dp"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/editTextCode"
+                                android:layout_width="@dimen/edit_width"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="#FFFFFF"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:inputType="text"
+                                android:paddingLeft="6dp"
+                                android:singleLine="true"
+                                android:text="1234567890"
+                                android:textSize="@dimen/input_font_size" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+
+                            style="@style/MyImage"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@drawable/rack_server_icon_icons_com_52830" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Сервер"
+                                android:textAlignment="center"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/big_label_fontSize"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Адрес HTTP"
+                                android:textAlignment="center"
+                                android:textColor="@color/small_label_color"
+                                android:textSize="@dimen/small_label_fontSize"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/fab2"
+                            android:layout_marginRight="12dp"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/editTextAdress"
+                                android:layout_width="@dimen/edit_width"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="#FFFFFF"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:inputType="text"
+                                android:paddingLeft="6dp"
+                                android:singleLine="true"
+                                android:text="1234567890"
+                                android:textSize="@dimen/input_font_size" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/divider" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            style="@style/MyImage"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@drawable/_486504816_coding_html_development_language_programming_81355" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Параметр"
+                                android:textAlignment="center"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/big_label_fontSize"
+                                android:textStyle="bold"></TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Маскирование"
+                                android:textAlignment="center"
+                                android:textColor="@color/small_label_color"
+                                android:textSize="@dimen/small_label_fontSize"></TextView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/fab2"
+                            android:layout_marginRight="12dp"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/editTextMask"
+                                android:layout_width="@dimen/edit_width"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="#FFFFFF"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:inputType="text"
+                                android:paddingLeft="6dp"
+                                android:singleLine="true"
+                                android:text="1234567890"
                                 android:textSize="@dimen/input_font_size" />
 
                         </LinearLayout>
                     </LinearLayout>
-
                 </LinearLayout>
 
                 <View
@@ -251,7 +420,18 @@
                     android:layout_height="1dp"
                     android:background="?android:attr/listDivider" />
 
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Режим работы"
+                    android:textColor="#050505"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="1dp"
@@ -261,297 +441,541 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            style="@style/MyImage"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@drawable/gps_location_pin_map_navigation_place_81484" />
 
                         <TextView
-
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Режим работы приемника"
-                            android:textColor="#BF0F0F"
-                            android:textSize="16sp" />
+                            android:layout_gravity="center_vertical"
+                            android:text="GPS"
+                            android:textAlignment="center"
+                            android:textColor="@color/big_label_color"
+                            android:textSize="@dimen/big_label_fontSize"
+                            android:textStyle="bold"></TextView>
 
                         <Spinner
-                            android:id="@+id/spinner1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:spinnerMode="dialog" />
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:ellipsize="start"
+                            android:scrollbarSize="22dp"
+                            android:trackTint="#FFFFFF" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
                         <ImageView
 
+                            style="@style/MyImage"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@drawable/gps_location_map_navigation_pin_81446" />
+
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="ГЛОНАСС"
+                            android:textAlignment="center"
+                            android:textColor="@color/big_label_color"
+                            android:textSize="@dimen/big_label_fontSize"
+                            android:textStyle="bold"></TextView>
+
+                        <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+
+                            android:trackTint="#FFFFFF" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            style="@style/MyImage"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@android:drawable/ic_menu_myplaces" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:onClick="radioButtonClik1"
+                            android:text="Режим работы"
+                            android:textAlignment="center"
+                            android:textColor="@color/big_label_color"
+                            android:textSize="@dimen/big_label_fontSize"
+                            android:textStyle="bold"></TextView>
+
+                        <Spinner
+                            android:id="@+id/spinnerWork"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:foreground="@drawable/candy24"
+                            android:foregroundGravity="right"
+                            android:spinnerMode="dialog" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            style="@style/MyImage"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@drawable/free_icon_vibration_12391505" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:onClick="radioButtonClik1"
+                            android:text="Контроль движения"
+                            android:textAlignment="center"
+                            android:textColor="@color/big_label_color"
+                            android:textSize="@dimen/big_label_fontSize"
+                            android:textStyle="bold"></TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:gravity="end"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radioButton1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="12dp"
+                                android:checked="true"
+                                android:foregroundGravity="right"
+                                android:onClick="radioButtonClik"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                android:theme="@style/MyRadioButton" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            style="@style/MyImage"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@drawable/free_icon_timer_1177919" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:onClick="radioButtonClik2"
+                            android:text="Радиомаяк"
+                            android:textAlignment="center"
+                            android:textColor="@color/big_label_color"
+                            android:textSize="@dimen/big_label_fontSize"
+                            android:textStyle="bold"></TextView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:gravity="end"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radioButton2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="12dp"
+                                android:checked="false"
+                                android:foregroundGravity="right"
+                                android:onClick="radioButtonClik"
+                                android:textColor="#FFFDFD"
+                                android:theme="@style/MyRadioButton" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            style="@style/MyImage"
+                            android:layout_width="@dimen/fab"
+                            android:layout_height="@dimen/fab"
+                            app:srcCompat="@drawable/free_icon_cell_tower_9653542" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Базовые станции"
+                            android:textAlignment="center"
+                            android:textColor="@color/big_label_color"
+                            android:textSize="@dimen/big_label_fontSize"
+                            android:textStyle="bold"></TextView>
+
+                        <Switch
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:thumb="@drawable/candy3"
+                            android:track="@drawable/shadows" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp" />
+
+
+                <LinearLayout
+                    android:id="@+id/LayoutOption1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="1dp"
+                    android:background="@drawable/custom_button"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Период"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/big_label_fontSize" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="определения навиг. данных"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/small_label_fontSize" />
+                        </LinearLayout>
+
+                        <Spinner
+                                android:id="@+id/spinnerPeriodOP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:spinnerMode="dialog" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:onClick="ShowInfoMessage"
                             android:tag="1"
                             app:srcCompat="@android:drawable/ic_dialog_info" />
 
                     </LinearLayout>
 
-                    <LinearLayout
+                    <View
+
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Период определения координат"
-                            android:textColor="#BF0F0F"
-                            android:textSize="16sp" />
-
-                        <Spinner
-                            android:id="@+id/spinner2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <ImageView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:onClick="ShowInfoMessage"
-                            android:tag="2"
-                            app:srcCompat="@android:drawable/ic_dialog_info" />
-
-                    </LinearLayout>
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+
                         android:orientation="horizontal">
 
-                        <TextView
-
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Период передачи координат"
-                            android:textColor="#BF0F0F"
-                            android:textSize="16sp" />
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Период"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/big_label_fontSize" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="передачи навиг. данных"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/small_label_fontSize" />
+                        </LinearLayout>
 
                         <Spinner
-                            android:id="@+id/spinner3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <ImageView
-
+                            android:id="@+id/spinnerPeriodSend"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:spinnerMode="dialog" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:onClick="ShowInfoMessage"
-                            android:tag="3"
+                            android:tag="1"
                             app:srcCompat="@android:drawable/ic_dialog_info" />
 
                     </LinearLayout>
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/textView3"
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Время срабатывания датчика"
-                            android:textColor="#BF0F0F"
-                            android:textSize="16sp" />
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Время"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/big_label_fontSize" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="срабатывания датчика движения "
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/small_label_fontSize" />
+                        </LinearLayout>
 
                         <Spinner
-                            android:id="@+id/spinner4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/spinnerTimeDD"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:spinnerMode="dialog" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:onClick="ShowInfoMessage"
-                            android:tag="4"
+                            android:tag="1"
                             app:srcCompat="@android:drawable/ic_dialog_info" />
 
                     </LinearLayout>
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:background="@color/divider" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+
                         android:orientation="horizontal">
 
-                        <TextView
-
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Чуствительность датчика"
-                            android:textColor="#BF0F0F"
-                            android:textSize="16sp" />
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Чуствительность"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/big_label_fontSize" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="датчика движения"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/small_label_fontSize" />
+                        </LinearLayout>
 
                         <Spinner
-                            android:id="@+id/spinner5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <ImageView
-
+                            android:id="@+id/spinnerSensDD"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:spinnerMode="dialog" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:onClick="ShowInfoMessage"
-                            android:tag="5"
+                            android:tag="1"
                             app:srcCompat="@android:drawable/ic_dialog_info" />
 
                     </LinearLayout>
+
+
                 </LinearLayout>
+
+
 
                 <LinearLayout
+                    android:id="@+id/LayoutOption2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
+                    android:layout_marginHorizontal="1dp"
+                    android:background="@drawable/custom_button"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:text="Настройка канала HTTPS"
-                        android:textSize="16sp" />
-
                     <LinearLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                        <TextView
-
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Идентификатор"
-                            android:textColor="#BF0F0F"
-                            android:textSize="16sp" />
+                            android:orientation="vertical">
 
-                        <EditText
-                            android:id="@+id/EditText1"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Период"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/big_label_fontSize" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="определения и передачи навиг. данных"
+                                android:textColor="@color/big_label_color"
+                                android:textSize="@dimen/small_label_fontSize" />
+                        </LinearLayout>
+
+                        <Spinner
+                            android:id="@+id/spinnerPeriodOPSend"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:singleLine="true" />
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:spinnerMode="dialog" />
 
                         <ImageView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
                             android:onClick="ShowInfoMessage"
-                            android:tag="6"
+                            android:tag="11"
                             app:srcCompat="@android:drawable/ic_dialog_info" />
 
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:text="Код в системе Факел"
-                            android:textColor="#BF0F0F"
-                            android:textSize="16sp" />
-
-                        <EditText
-                            android:id="@+id/EditText2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:singleLine="true" />
-
-                        <ImageView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:onClick="ShowInfoMessage"
-                            android:tag="6"
-                            app:srcCompat="@android:drawable/ic_dialog_info" />
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.7"
-                            android:text="Код маскирования"
-                            android:textColor="#BF0F0F"
-                            android:textSize="16sp" />
-
-                        <EditText
-                            android:id="@+id/EditText3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:singleLine="true" />
-
-                        <ImageView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:onClick="ShowInfoMessage"
-                            android:tag="6"
-                            app:srcCompat="@android:drawable/ic_dialog_info" />
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:text="Адрес HTTP сервера"
-                            android:textColor="#BF0F0F"
-                            android:textSize="16sp" />
-
-                        <EditText
-                            android:id="@+id/EditText4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:singleLine="true" />
-
-                        <ImageView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:onClick="ShowInfoMessage"
-                            android:tag="6"
-                            app:srcCompat="@android:drawable/ic_dialog_info" />
-
-                    </LinearLayout>
-
 
 
                 </LinearLayout>
-
-
-
-
 
             </LinearLayout>
         </ScrollView>
-
 
 
     </LinearLayout>

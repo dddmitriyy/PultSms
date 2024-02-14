@@ -43,20 +43,47 @@ class MainActivity : AppCompatActivity() {
         Checkpermission()
      //   CreateButtonList()
         spinnerInitAdd()
+
     }
 
+
+
+    fun radioButtonClik(v:View)
+    {
+ println(v)
+        if (binding.radioButton1.id== v.id) {
+            binding.radioButton2.isChecked = false
+            binding.radioButton1.isChecked = true
+            binding.LayoutOption1.visibility =  View.VISIBLE
+            binding.LayoutOption2.visibility =  View.GONE
+
+
+        }
+        if (binding.radioButton2.id== v.id) {
+            binding.radioButton1.isChecked = false
+            binding.radioButton2.isChecked = true
+            binding.LayoutOption2.visibility =  View.VISIBLE
+            binding.LayoutOption1.visibility =  View.GONE
+        }
+
+
+    }
+
+   fun radioButtonClik1 (v:View) =    binding.radioButton1.callOnClick()
+   fun radioButtonClik2 (v:View) =    binding.radioButton2.callOnClick()
     override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
         return super.onCreateView(name, context, attrs)
-        Log.w("onCreateView","e")
-
+        Log.w("onCreateView","i")
 
     }
+
+
 
 // функция для заполнения spinner
     fun spinnerInit( spin :Spinner,list :List<String>)
     {
 
-        val adapter = ArrayAdapter (this, android.R.layout.simple_spinner_item, list)
+        val adapter = ArrayAdapter (this,  R.layout.myspinnertext, list)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         spin.adapter = adapter
@@ -66,16 +93,38 @@ class MainActivity : AppCompatActivity() {
     }
     fun spinnerInitAdd() {
         val list = listOf<String>(
-            "Apple",
-            "Banana",
-            "Cherry",
-            "Durian")
+            "1 сек.",
+            "5 сек.",
+            "15 сек.",
+            "30 сек.",
+            "1 мин.",
+            "5 мин.",
+            "10 мин.",
+            "15 мин.",
+            )
 
-        spinnerInit(binding.spinner1,list)
-        spinnerInit(binding.spinner2,list)
-        spinnerInit(binding.spinner3,list)
-        spinnerInit(binding.spinner4,list)
-        spinnerInit(binding.spinner5,list)
+        spinnerInit(binding.spinnerPeriodOP,list)
+        spinnerInit(binding.spinnerPeriodSend,list)
+        val list2 = listOf<String>(
+            "30 мин.",
+            "1 час.",
+            "2 час.",
+            "3 час.",
+            "4 час.",
+            "8 час.",
+            "12 час.",
+            "24 час.",
+        )
+
+        spinnerInit(binding.spinnerPeriodSend,list2)
+
+
+        var array   = Array<String>(255) { i -> ( i).toString()+" мин." }.toList()
+        spinnerInit(binding.spinnerWork,array)
+        array   = Array<String>(127) { i -> ( i).toString()+"" }.toList()
+        spinnerInit(binding.spinnerWork,array)
+
+
 
     }
 
@@ -120,11 +169,11 @@ class MainActivity : AppCompatActivity() {
     fun ComanndSend(view: View) {
 
 
-        val cmd=    binding.editTextSendMessageCommand.text.toString()
-        val phone=  binding.editTextSendMessageNumbler.text.toString()
-
-            Toast.makeText(this,"Команда  " + cmd+ " отправлена по номеру " +phone, Toast.LENGTH_LONG).show()
-            sendSms(phone,cmd)
+//        val cmd=    binding.editTextSendMessageCommand.text.toString()
+//        val phone=  binding.editTextSendMessageNumbler.text.toString()
+//
+//            Toast.makeText(this,"Команда  " + cmd+ " отправлена по номеру " +phone, Toast.LENGTH_LONG).show()
+//            sendSms(phone,cmd)
 
 
     }
@@ -137,7 +186,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun callSend(view: View)
     {
-        call(binding.editTextSendMessageNumbler.text.toString())
+     //   call(binding.editTextSendMessageNumbler.text.toString())
     }
     fun Checkpermission() {
         if (ContextCompat.checkSelfPermission(
@@ -270,9 +319,8 @@ class MainActivity : AppCompatActivity() {
             t = "mau:" + t
 
         Log.w("activity222",binding.toString())
-        binding.editTextSendMessageCommand?.setText(t)
-
-        binding.textViewDescription?.setText(name)
+//        binding.editTextSendMessageCommand?.setText(t)
+//        binding.textViewDescription?.setText(name)
 
 
     }
