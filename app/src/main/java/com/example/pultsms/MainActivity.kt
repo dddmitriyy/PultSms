@@ -11,11 +11,13 @@ import android.telephony.SmsManager
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.DoNotInline
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -91,6 +93,34 @@ class MainActivity : AppCompatActivity() {
 
         spin.getSelectedItem().toString()
     }
+
+      fun Boolean.toInt(  ) = if (this) 1 else 0
+
+    fun GetAllValue():String
+    {
+        var ss=""
+        var s="ANAL"+
+        binding.editTextId.text+","+
+        binding.editTextCode.text+","+
+        binding.editTextAdress.text+","+
+        binding.editTextMask.text+","+
+        binding.switchGPS.isChecked.toInt()+","+
+        binding.switchGlonas.isChecked.toInt()+","+
+        binding.switchBaseS.isChecked.toInt()+","
+        if (binding.spinnerWorkMode.selectedItemPosition==0) {
+              ss = binding.spinnerPeriodOP.getSelectedItem().toString() + "," +
+                    binding.spinnerPeriodSend.getSelectedItem().toString() + "," +
+                    binding.spinnerTimeDD.getSelectedItem().toString() + "," +
+                    binding.spinnerSensDD.getSelectedItem().toString() + "#"
+        }
+        else
+               ss =  binding.spinnerPeriodOPSend.getSelectedItem().toString() + "#"
+
+        return s+ss
+
+    }
+
+
     fun spinnerInitAdd() {
         val list = listOf<String>(
             "1 сек.",
@@ -125,8 +155,34 @@ class MainActivity : AppCompatActivity() {
 
         spinnerInit(binding.spinnerPeriodOPSend,list2)
 
-    }
 
+
+
+
+        binding.spinnerWorkMode.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+           //     Handle the selected item here
+           //     val selectedItem = parent?.getItemAtPosition(position).toString()
+           //     Toast.makeText(applicationContext, "Selected: $selectedItem", Toast.LENGTH_SHORT).show()
+
+                if (position==0)
+                {
+                    binding.LayoutOption1.visibility =  View.VISIBLE
+                    binding.LayoutOption2.visibility =  View.GONE
+                }
+                else
+                {
+                    binding.LayoutOption1.visibility =  View.GONE
+                    binding.LayoutOption2.visibility =  View.VISIBLE
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Handle when nothing is selected
+            }
+        }
+
+    }
 
 
 
@@ -158,7 +214,18 @@ class MainActivity : AppCompatActivity() {
 
     fun ShowInfoMessage(view: View)
     {
-        val s= view.tag
+        var s= view.tag
+
+        if (s=="13")
+            s="Указывается время, через которое начинает работать датчик движения после включения изделия. Если установить 0 мин., то датчик движения выключен.\n" +
+                    "Пример: Если установить 5 мин., то изделие перейдет в спящий режим только через 5 мин.,даже если в течение этих 5 минут не было движения."
+
+        if (s=="12")
+            s=   """1 - наибольшая чуствительность (изделие просыпается от малейшего движения)
+127 - наименьшая чуствительность (требуется сильное движение, чтобы изделие проснулось)
+ Для легковых авто рекомендуется устанавливать значение - 75"""
+
+
         val builder = AlertDialog.Builder(this)
         builder//setTitle(" ")
             .setMessage(s.toString())
@@ -167,9 +234,10 @@ class MainActivity : AppCompatActivity() {
     }
     fun ComanndSend(view: View) {
 
+       println(GetAllValue())
 
-//        val cmd=    binding.editTextSendMessageCommand.text.toString()
-//        val phone=  binding.editTextSendMessageNumbler.text.toString()
+        val cmd=    GetAllValue()
+       val phone=  binding.editTextPhone.text.toString()
 //
 //            Toast.makeText(this,"Команда  " + cmd+ " отправлена по номеру " +phone, Toast.LENGTH_LONG).show()
 //            sendSms(phone,cmd)
@@ -185,7 +253,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun callSend(view: View)
     {
-     //   call(binding.editTextSendMessageNumbler.text.toString())
+         call(binding.editTextPhone.text.toString())
     }
     fun Checkpermission() {
         if (ContextCompat.checkSelfPermission(

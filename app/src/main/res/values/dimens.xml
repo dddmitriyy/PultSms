@@ -1,6 +1,8 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="fab">64dp</dimen>
+
+    <dimen name="fab">36dp</dimen>
+    <dimen name="fab3332">36dp</dimen>
     <dimen name="fab2">16dp</dimen>
     <dimen name="fab3">8dp</dimen>
     <dimen name="edit_width">162dp</dimen>
@@ -9,5 +11,5 @@
     <color name="big_label_color">#E9E9E7</color>
     <dimen name="small_label_fontSize">12sp</dimen>
     <color name="small_label_color">#919191</color>
-    <color name="divider">#919191</color>
+    <color name="divider">#28919191</color>
 </resources>

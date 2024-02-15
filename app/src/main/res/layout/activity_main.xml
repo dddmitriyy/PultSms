@@ -21,32 +21,40 @@
         android:padding="10dp">
 
 
-        <Button
-            android:id="@+id/buttonSendMessageCommand"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            android:layout_gravity="center"
-            android:onClick="ComanndSend"
-            android:text="Отправить команду"
-            android:visibility="gone" />
+            <Button
+                android:id="@+id/buttoncallSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:textColor="#FFFFFF"
+                android:layout_gravity="center"
+                android:background="@drawable/custombut2"
+                android:onClick="callSend"
+                android:elevation="6dp"
+                android:stateListAnimator="@null"
+                android:translationZ="4dp"
+                android:text="Aудиоконтроль" />
 
-        <Button
-            android:id="@+id/buttoncallSend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_gravity="center"
-            android:onClick="callSend"
-            android:text="Aудиоконтроль"
-            android:visibility="gone" />
-
+            <Button
+                android:id="@+id/buttonSendMessageCommand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/custombut2"
+                android:layout_gravity="center"
+                android:onClick="ComanndSend"
+                android:text="Отправить команду" />
+        </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-
             android:scrollbars="horizontal">
 
 
@@ -87,11 +95,13 @@
                             android:id="@+id/imageView2"
                             android:layout_width="@dimen/fab"
                             android:layout_height="@dimen/fab"
+                            android:layout_gravity="center_vertical"
+                            android:foregroundGravity="center_vertical"
                             app:srcCompat="@drawable/phone_31105" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical">
 
                             <TextView
@@ -105,7 +115,7 @@
 
                             <TextView
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:text="Номер телефона"
                                 android:textAlignment="center"
                                 android:textColor="@color/small_label_color"
@@ -161,11 +171,13 @@
                             style="@style/MyImage"
                             android:layout_width="@dimen/fab"
                             android:layout_height="@dimen/fab"
+                            android:layout_gravity="center_vertical"
+                            android:foregroundGravity="center_vertical"
                             app:srcCompat="@drawable/contact_icon_icon_icons_com_76434" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical">
 
                             <TextView
@@ -214,9 +226,9 @@
                     </LinearLayout>
 
                     <View
-
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/fab"
                         android:background="@color/divider" />
 
                     <LinearLayout
@@ -227,11 +239,13 @@
                             style="@style/MyImage"
                             android:layout_width="@dimen/fab"
                             android:layout_height="@dimen/fab"
+                            android:layout_gravity="center_vertical"
+                            android:foregroundGravity="center_vertical"
                             app:srcCompat="@drawable/id_icon_148506" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical">
 
                             <TextView
@@ -282,6 +296,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/fab"
                         android:background="@color/divider" />
 
                     <LinearLayout
@@ -293,11 +308,13 @@
                             style="@style/MyImage"
                             android:layout_width="@dimen/fab"
                             android:layout_height="@dimen/fab"
+                            android:layout_gravity="center_vertical"
+                            android:foregroundGravity="center_vertical"
                             app:srcCompat="@drawable/rack_server_icon_icons_com_52830" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical">
 
                             <TextView
@@ -345,7 +362,9 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
+                            android:layout_marginLeft="@dimen/fab"
                             android:layout_weight="1"
+
                             android:background="@color/divider" />
 
                     </LinearLayout>
@@ -353,6 +372,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/fab"
                         android:layout_weight="1"
                         android:background="@color/divider" />
 
@@ -364,11 +384,13 @@
                             style="@style/MyImage"
                             android:layout_width="@dimen/fab"
                             android:layout_height="@dimen/fab"
+                            android:layout_gravity="center_vertical"
+                            android:foregroundGravity="center_vertical"
                             app:srcCompat="@drawable/_486504816_coding_html_development_language_programming_81355" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical">
 
                             <TextView
@@ -415,10 +437,6 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="?android:attr/listDivider" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -457,16 +475,27 @@
                             android:textAlignment="center"
                             android:textColor="@color/big_label_color"
                             android:textSize="@dimen/big_label_fontSize"
+
                             android:textStyle="bold"></TextView>
 
-                        <Switch
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:gravity="right">
 
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                            android:trackTint="#28DC30" />
+                            <Switch
+                                android:id="@+id/switchGPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:paddingRight="6dp"
+                                android:scaleX="1.3"
+                                android:scaleY="1.3"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:trackTint="#FFFFFF" />
+
+                        </LinearLayout>
 
 
                     </LinearLayout>
@@ -474,6 +503,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/fab"
                         android:layout_weight="1"
                         android:background="@color/divider" />
 
@@ -498,20 +528,30 @@
                             android:textSize="@dimen/big_label_fontSize"
                             android:textStyle="bold"></TextView>
 
-                        <Switch
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:gravity="right">
 
-                            android:trackTint="#FFFFFF" />
+                            <Switch
+                                android:id="@+id/switchGlonas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:paddingRight="6dp"
+                                android:scaleX="1.3"
+                                android:scaleY="1.3"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:trackTint="#FFFFFF" />
 
+                        </LinearLayout>
                     </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/fab"
                         android:layout_weight="1"
                         android:background="@color/divider" />
 
@@ -538,14 +578,14 @@
 
                         <Spinner
                             android:id="@+id/spinnerWorkMode"
-
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
-                            android:foreground="@drawable/candy24"
-                            android:foregroundGravity="right"
+                            android:background="@drawable/my_rectangle"
+                            android:foreground="@drawable/leftarrow"
+                            android:foregroundGravity="center_vertical|right"
+                            android:foregroundTint="@color/small_label_color"
                             android:spinnerMode="dialog" />
 
                     </LinearLayout>
@@ -553,7 +593,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/fab"
                         android:background="@color/divider" />
 
                     <LinearLayout
@@ -603,7 +643,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/fab"
                         android:background="@color/divider" />
 
                     <LinearLayout
@@ -653,7 +693,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/fab"
                         android:background="@color/divider" />
 
                     <LinearLayout
@@ -676,14 +716,25 @@
                             android:textSize="@dimen/big_label_fontSize"
                             android:textStyle="bold"></TextView>
 
-                        <Switch
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:thumb="@drawable/candy3"
-                            android:track="@drawable/shadows" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="6dp"
+                            android:gravity="right">
 
+                            <Switch
+                                android:id="@+id/switchBaseS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:paddingRight="9dp"
+                                android:scaleX="1.3"
+                                android:scaleY="1.3"
+                                android:thumb="@drawable/candy3"
+                                android:track="@drawable/shadows" />
+
+                        </LinearLayout>
                     </LinearLayout>
 
 
@@ -728,16 +779,19 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="определения навиг. данных"
-                                android:textColor="@color/big_label_color"
+                                android:textColor="@color/small_label_color"
                                 android:textSize="@dimen/small_label_fontSize" />
                         </LinearLayout>
 
                         <Spinner
-                                android:id="@+id/spinnerPeriodOP"
+                            android:id="@+id/spinnerPeriodOP"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
+                            android:background="@drawable/my_rectangle"
+                            android:foreground="@drawable/leftarrow"
+                            android:foregroundGravity="right"
                             android:spinnerMode="dialog" />
 
                         <ImageView
@@ -745,7 +799,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:onClick="ShowInfoMessage"
-                            android:tag="1"
+                            android:tag="15"
                             app:srcCompat="@android:drawable/ic_dialog_info" />
 
                     </LinearLayout>
@@ -754,7 +808,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/fab"
                         android:background="@color/divider" />
 
                     <LinearLayout
@@ -782,7 +836,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="передачи навиг. данных"
-                                android:textColor="@color/big_label_color"
+                                android:textColor="@color/small_label_color"
                                 android:textSize="@dimen/small_label_fontSize" />
                         </LinearLayout>
 
@@ -792,6 +846,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
+                            android:background="@drawable/my_rectangle"
+                            android:foreground="@drawable/leftarrow"
+                            android:foregroundGravity="right"
                             android:spinnerMode="dialog" />
 
                         <ImageView
@@ -799,7 +856,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:onClick="ShowInfoMessage"
-                            android:tag="1"
+                            android:tag="14"
                             app:srcCompat="@android:drawable/ic_dialog_info" />
 
                     </LinearLayout>
@@ -808,7 +865,7 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/fab"
                         android:background="@color/divider" />
 
                     <LinearLayout
@@ -836,7 +893,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="срабатывания датчика движения "
-                                android:textColor="@color/big_label_color"
+                                android:textColor="@color/small_label_color"
                                 android:textSize="@dimen/small_label_fontSize" />
                         </LinearLayout>
 
@@ -846,6 +903,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
+                            android:background="@drawable/my_rectangle"
+                            android:foreground="@drawable/leftarrow"
+                            android:foregroundGravity="right"
                             android:spinnerMode="dialog" />
 
                         <ImageView
@@ -853,15 +913,16 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:onClick="ShowInfoMessage"
-                            android:tag="1"
+                            android:tag="13"
                             app:srcCompat="@android:drawable/ic_dialog_info" />
 
                     </LinearLayout>
+
                     <View
 
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/fab"
                         android:background="@color/divider" />
 
                     <LinearLayout
@@ -889,7 +950,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:text="датчика движения"
-                                android:textColor="@color/big_label_color"
+                                android:textColor="@color/small_label_color"
                                 android:textSize="@dimen/small_label_fontSize" />
                         </LinearLayout>
 
@@ -899,6 +960,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
+                            android:background="@drawable/my_rectangle"
+                            android:foreground="@drawable/leftarrow"
+                            android:foregroundGravity="right"
                             android:spinnerMode="dialog" />
 
                         <ImageView
@@ -906,7 +970,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:onClick="ShowInfoMessage"
-                            android:tag="1"
+                            android:tag="12"
                             app:srcCompat="@android:drawable/ic_dialog_info" />
 
                     </LinearLayout>
@@ -915,14 +979,15 @@
                 </LinearLayout>
 
 
-
                 <LinearLayout
                     android:id="@+id/LayoutOption2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="1dp"
                     android:background="@drawable/custom_button"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
                     <LinearLayout
 
@@ -949,7 +1014,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="определения и передачи навиг. данных"
-                                android:textColor="@color/big_label_color"
+                                android:textColor="@color/small_label_color"
                                 android:textSize="@dimen/small_label_fontSize" />
                         </LinearLayout>
 
@@ -959,6 +1024,9 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_weight="1"
+                            android:background="@drawable/my_rectangle"
+                            android:foreground="@drawable/leftarrow"
+                            android:foregroundGravity="right"
                             android:spinnerMode="dialog" />
 
                         <ImageView
@@ -980,7 +1048,6 @@
 
 
     </LinearLayout>
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
